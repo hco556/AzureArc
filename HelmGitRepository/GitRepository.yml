@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: kubernetesdeploymentdemo
+  namespace: gitopsdemo
+spec:
+  interval: 1m
+  url: https://github.com/WolfgangOfner/AzureArc/HelmGitRepository
+  ref:
+    branch: master
