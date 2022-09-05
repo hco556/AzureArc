@@ -6,9 +6,9 @@ replicaCount: 1
 
 image:
   repository: wolfgangofner/kubernetesdeploymentdemo
-  pullPolicy: start
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: start
 
 imagePullSecrets: []
 nameOverride: ""
