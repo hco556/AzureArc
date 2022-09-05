@@ -1,19 +1,17 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: kubernetesdeploymentdemo
-  namespace: gitopsdemo
-  annotations:
-    clusterconfig.azure.com/use-managed-source: "true"
+  namespace: gitopsdemo  
 spec:
   interval: 1m
   chart:
     spec:
+      releaseName: kubernetesdeploymentdemo
       chart: ./charts/kubernetesdeploymentdemo
-      sourceRef:
-        kind: GitRepository
-        name: kubernetesdeploymentdemo
-        namespace: gitopsdemo
+        git: https://github.com/WolfgangOfner/AzureArc
+        ref: master
+        path: charts\kubernetesdeploymentdemo
       interval: 1m
   values:
     replicaCount: 2
