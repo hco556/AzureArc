@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - release.yaml
   - namespace.yaml
+  - bitnami.yaml
 configMapGenerator:
   - name: redis-values
     namespace: cluster-config
