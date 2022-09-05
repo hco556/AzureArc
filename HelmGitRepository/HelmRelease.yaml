@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: kubernetesdeploymentdemo
   namespace: gitopsdemo
+  annotations:
+    clusterconfig.azure.com/use-managed-source: "true"
 spec:
   interval: 1m
   chart:
